@@ -1,0 +1,55 @@
+.lunchGroupSide {
+  padding: 2rem;
+  width: 65%;
+}
+
+.makeGroupsForm {
+  display: flex;
+  justify-content: flex-start;
+  border-bottom: 0.5px solid gainsboro;
+}
+
+.randomLunchGroupsTitle {
+  color: rgb(70, 70, 70);
+  font-size: 20px;
+  font-weight: 300;
+  margin-bottom: 1rem;
+}
+
+p {
+  font-size: 12px;
+  color: #737373;
+  font-weight: 400;
+}
+
+.numInput {
+  font-size: 15px;
+  height: 40px;
+  border: 1px solid #989898;
+  border-radius: 1rem;
+  margin: 1.5rem 2rem 0 0;
+  text-indent: 15px;
+}
+
+.numInput:focus {
+  outline: none;
+  border: 2px solid #f74375;
+}
+
+.groupSection {
+  color: rgb(70, 70, 70);
+  border-radius: 0.5rem;
+  margin: 1rem 0;
+  box-shadow: 0 3px 10px -2px rgba(0, 0, 0, 0.2);
+}
+
+.groupTitle {
+  font-size: 20px;
+  font-weight: 500;
+  padding: 1rem;
+}
+
+.groupPeople {
+  display: inline-block;
+  padding: 1rem;
+}
