@@ -117,4 +117,26 @@ router.post("/people", async (req, res) => {
   }
 });
 
+// delete a person by personId
+router.delete("/people/:personId", async (req, res) => {
+  const { personId } = req.params;
+  if (mongoose.Types.ObjectId.isValid(personId) === false) {
+    return res.status(400).json("This is an invalid Id");
+  }
+
+  try {
+    await Person.findOneAndDelete({ _id: personId }, (error, doc) => {
+      if (error) {
+        return res.status(400).json(`Error: ${error}`);
+      } else if (!doc) {
+        return res.status(404).json(`This person does not exist`);
+      } else {
+        return res.status(200).json(`Id: ${personId} is deleted successfully`);
+      }
+    });
+  } catch (error) {
+    return res.status(400).send(`Error: ${error}`);
+  }
+});
+
 module.exports = router;
