@@ -99,4 +99,22 @@ router.get("/random", async (req, res) => {
   }
 });
 
+// create a new person
+router.post("/people", async (req, res) => {
+  const { name } = req.body;
+
+  try {
+    const person = await Person.findOne({ name });
+    if (person) {
+      return res.status(400).json("This person exists already");
+    }
+
+    const newPerson = new Person({ name });
+    await newPerson.save();
+    return res.status(201).json(newPerson);
+  } catch (error) {
+    return res.status(400).send(`Error: ${error}`);
+  }
+});
+
 module.exports = router;
